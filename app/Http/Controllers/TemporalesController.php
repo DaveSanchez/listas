@@ -69,6 +69,8 @@ class TemporalesController extends Controller
         $temporales->p25 = ($request->p25 === 'checked') ? 1 : 0;       
         $temporales->foto = $request->file('foto')->store('photos');
         $temporales->con_hijos = ($request->con_hijos === 'checked') ? 1 : 0;
+        $temporales->asistencias = 0;
+        $temporales->faltas = 0;
         $temporales->alta = 1;        
         $temporales->deportes = $request->deportes;
         $temporales->fecha_ing = $request->fecha_ing;

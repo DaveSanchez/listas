@@ -21,6 +21,8 @@ class Temporales extends Model
         'cijubila',
         'p25',
         'con_hijos',
+        'asistencias',
+        'faltas',
         'alta',
         'deportes',
         'fecha_ing',
