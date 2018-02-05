@@ -69,5 +69,41 @@ class ListasController extends Controller
         return view('listas.admin', compact('asistencias','temporales','id'));
 
     }
+
+    public function show($id){
+
+        $lista = Listas::findOrFail($id);
+
+        return view('listas.show',compact('lista'));
+
+    }
+
+    public function update(Request $request){
+
+        $messages = [
+            'titulo.required' => 'El titulo es obligatorio',
+            'fecha.required' => 'La fecha es obligatoria',
+            'observaciones.required' => 'Las observaciones son obligatorias'
+        ];
+
+        $this->validate(request(),[
+            'titulo' => 'required',
+            'fecha' => 'required',
+            'observaciones' => 'required'
+        ],$messages);
+
+        $listas = Listas::find($request->lid);
+
+        $listas->titulo = $request->titulo;
+        $listas->fecha = $request->fecha;
+        $listas->observaciones = $request->observaciones;
+        $create = $listas->save();
+
+        $success = $create ? $request->session()->flash('success', '¡Lista actualizada!') : $request->session()->flash('success', 'Ooops! Algo salio mal :(');
+        
+
+        return redirect()->route('listas.show',[$request->lid]);
+
+    }
     
 }

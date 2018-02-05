@@ -22,6 +22,8 @@ Route::post('/temporales/disable','TemporalesController@disable')->name('tempora
 Route::get('/listas','ListasController@index')->name('listas');
 Route::post('/listas/store','ListasController@store')->name('listas.store');
 Route::get('/listas/admin/{id}','ListasController@admin')->name('listas.admin');
+Route::get('/listas/show/{id}','ListasController@show')->name('listas.show');
+Route::post('/listas/update','ListasController@update')->name('listas.update');
 
 Route::post('/asistencias/store','AsistenciasController@store')->name('asistencias.store');
 Route::post('/asistencias/check','AsistenciasController@check')->name('asistencias.check');

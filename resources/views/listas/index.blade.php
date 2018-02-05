@@ -22,6 +22,7 @@
                         <th class="text-center">Fecha</th> 
                         <th class="text-center">Observaciones</th> 
                         <th class="text-center">Administrar</th> 
+                        <th class="text-center">Modificar</th> 
                     </tr> 
                 </thead> 
                 <tbody> 
@@ -36,6 +37,11 @@
                         <td>
                             <a href="{!! route('listas.admin',['id' => $lista->id]) !!}">
                                 <i class="fa fa-cogs" aria-hidden="true"></i>                                 
+                            </a>
+                        </td> 
+                        <td>
+                            <a href="{!! route('listas.show',['id' => $lista->id]) !!}">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>                                 
                             </a>
                         </td>                         
                     </tr> 
