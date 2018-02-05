@@ -48,7 +48,7 @@
                                     </div>
                                 <div class="row-fluid">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <button class="btn btn-primary" type="submit">Actualizar</button>
+                                    <button class="btn btn-primary" type="submit" onclick="this.disabled=true;this.form.submit();">Actualizar</button>
                                        
                                     </div>
                                 </div>

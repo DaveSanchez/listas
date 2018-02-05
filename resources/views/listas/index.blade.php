@@ -109,7 +109,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" id="btn_save_list" class="btn btn-primary">Guardar</button>
+              <button type="button" id="btn_save_list" class="btn btn-primary" onclick="this.disabled=true;this.form.submit();">Guardar</button>
             </div>
           </div>
         </div>
