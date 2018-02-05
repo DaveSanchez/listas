@@ -239,7 +239,7 @@
                                     <div class="row-fluid">
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group  {{ $errors->has('deportes') ? ' has-error' : '' }}">
-                                                    <label for="deportes">Deportes que practicas</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                    <label for="deportes">Deportes que practicas</label><span class="text-danger">
                                                     <textarea class="form-control" name="deportes" id="deportes" rows="2">{{ old('deportes') }}</textarea>
                                                     @if ($errors->has('deportes'))
                                                     <span id="helpBlock8" class="help-block text-danger">
@@ -275,7 +275,7 @@
                                     <div class="row-fluid">
                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                 <div class="form-group {{ $errors->has('fecha_ing') ? ' has-error' : '' }}">
-                                                        <label  for="fecha_ing">Fecha de Ingreso</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                        <label  for="fecha_ing">Fecha de Ingreso</label>
                                                         <input type="date" class="form-control" id="fecha_ing" name="fecha_ing" value="{{ old('fecha_ing') }}">
                                                         @if ($errors->has('fecha_ing'))
                                                         <span id="helpBlock8" class="help-block text-danger">
@@ -286,7 +286,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                             <div class="form-group {{ $errors->has('estado_civil') ? ' has-error' : '' }}">
-                                                    <label for="estado_civil" class="control-label">Estado Civil</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                    <label for="estado_civil" class="control-label">Estado Civil</label>
                                                     <select name="estado_civil" id="estado_civil" class="form-control">
                                                         <option value="soltero" {{ old('estado_civil') == 'soltero' ? ' selected' : '' }}>Soltero</option>
                                                         <option value="casado" {{ old('estado_civil') == 'casado' ? ' selected' : '' }}>Casado</option>
@@ -297,7 +297,7 @@
                                     <div class="row-fluid">
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group {{ $errors->has('especialidad') ? ' has-error' : '' }}">
-                                                    <label for="especialidad">Especialidad, Habilidad u Oficio</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                    <label for="especialidad">Especialidad, Habilidad u Oficio</label>
                                                     <input type="text" class="form-control" name="especialidad" id="especialidad" value="{{ old('especialidad') }}" />
                                                     @if ($errors->has('especialidad'))
                                                     <span id="helpBlock8" class="help-block text-danger">
@@ -310,7 +310,7 @@
                                         <div class="row-fluid">
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                     <div class="form-group {{ $errors->has('cursos_m') ? ' has-error' : '' }}">
-                                                        <label for="cursos_m">Cursos que te gustaría tomar</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                        <label for="cursos_m">Cursos que te gustaría tomar</label>
                                                         <textarea class="form-control" name="cursos_m" id="cursos_m" rows="2" value="{{ old('cursos_m') }}"></textarea>
                                                         @if ($errors->has('cursos_m'))
                                                         <span id="helpBlock8" class="help-block text-danger">
@@ -323,7 +323,7 @@
                                     <div class="row-fluid">
                                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                             <div class="form-group {{ $errors->has('estudios') ? ' has-error' : '' }}">
-                                                <label for="estudios" class="control-label">Estudios</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                <label for="estudios" class="control-label">Estudios</label>
                                                 <select name="estudios" id="estudios" class="form-control">
                                                     <option value="primaria" {{ old('estudios') == 'primaria' ? ' selected' : '' }}>Primaria</option>
                                                     <option value="securndaria" {{ old('estudios') == 'secundaria' ? ' selected' : '' }}>Secundaria</option>
@@ -334,7 +334,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                             <div class="form-group {{ $errors->has('puesto') ? ' has-error' : '' }}">
-                                                <label for="puesto" class="control-label">Puesto actual</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                <label for="puesto" class="control-label">Puesto actual</label>
                                                 <input type="text" id="puesto" name="puesto" class="form-control" value="{{ old('puesto') }}">
                                                 @if ($errors->has('puesto'))
                                                 <span id="helpBlock8" class="help-block text-danger">
@@ -345,7 +345,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                             <div class="form-group {{ $errors->has('tiempo') ? ' has-error' : '' }}">
-                                                <label for="tiempo" class="control-label">Tiempo en el puesto</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                <label for="tiempo" class="control-label">Tiempo en el puesto</label>
                                                 <input type="text" id="tiempo" name="tiempo" class="form-control" value="{{ old('tiempo') }}">
                                                 @if ($errors->has('tiempo'))
                                                 <span id="helpBlock8" class="help-block text-danger">
@@ -358,7 +358,7 @@
                                     <div class="row-fluid">
                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                 <div class="form-group {{ $errors->has('delegado') ? ' has-error' : '' }}">
-                                                    <label for="delegado" class="control-label">Delegado</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                    <label for="delegado" class="control-label">Delegado</label>
                                                     <input type="text" id="delegado" name="delegado" class="form-control" value="{{ old('delegado') }}">
                                                     @if ($errors->has('delegado'))
                                                     <span id="helpBlock8" class="help-block text-danger">
@@ -369,7 +369,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                 <div class="form-group {{ $errors->has('puestos_a') ? ' has-error' : '' }}">
-                                                    <label for="puestos_a" class="control-label">Puestos anteriores</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                                                    <label for="puestos_a" class="control-label">Puestos anteriores</label>
                                                     <input type="text" id="puestos_a" name="puestos_a" class="form-control" value="{{ old('puestos_a') }}">
                                                     @if ($errors->has('puestos_a'))
                                                     <span id="helpBlock8" class="help-block text-danger">

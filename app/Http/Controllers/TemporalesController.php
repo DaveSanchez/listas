@@ -34,26 +34,14 @@ class TemporalesController extends Controller
             'rtt.unique' => 'La clave ya existe',
             'rtt.required' => 'La clave es obligatoria',
             'rtt.regex' => 'La clave es se compone de 2 letras seguido de 3 números',
-            'clave.unique' => 'La clave ya esta registrada',
             'nombre.required' => 'El nombre es obligatorio',
             'ap.required' => 'El Apellido Paterno es obligatorio',
             'am.required' => 'El Apellido Materno es obligatorio',
             'tel_personal.digits' => 'El teléfono debe componerse de 10 digitos',
             'tel_casa.digits' => 'El teléfono debe componerse de 7 digitos',
-            'email.email' => 'La estructura del correo no es valida',
             'foto.required' => 'La foto es obligatoria',
             'foto.image' => 'Este archivo no es una imagen',
-            'fotos.mimes' => 'Solo se aceptan archivos jpeg, jpg y png',
-            'deportes.required' => 'Este campo es obligatorio',
-            'fecha_ing.required' => 'Este campo es obligatorio',
-            'estado_civil.required' => 'Este campo es obligatorio',
-            'especialidad.required' => 'Este campo es obligatorio',
-            'cursos_m.required' => 'Este campo es obligatorio',
-            'estudios.required' => 'Este campo es obligatorio',
-            'puesto.required' => 'Este campo es obligatorio',
-            'tiempo.required' => 'Este campo es obligatorio',
-            'delegado.required' => 'Este campo es obligatorio',
-            'puestos_a.required' => 'Este campo es obligatorio'
+            'fotos.mimes' => 'Solo se aceptan archivos jpeg, jpg y png'
         ];
 
         $this->validate(request(),[
@@ -64,17 +52,7 @@ class TemporalesController extends Controller
             'fecha_nac' => 'nullable',
             'tel_personal' => 'digits:10',
             'tel_casa' => 'nullable|digits:7',
-            'foto' => 'required|image|mimes:jpeg,jpg,png',
-            'deportes' => 'required',
-            'fecha_ing' => 'required',
-            'estado_civil' => 'required',
-            'especialidad' => 'required',
-            'cursos_m' => 'required',
-            'estudios' => 'required',
-            'puesto' => 'required',
-            'tiempo' => 'required',
-            'delegado' => 'required',
-            'puestos_a' => 'required'
+            'foto' => 'required|image|mimes:jpeg,jpg,png'
         ],$messages);
 
         $temporales = new Temporales;
@@ -124,24 +102,13 @@ class TemporalesController extends Controller
         $messages = [
             'rtt.required' => 'La clave es obligatoria',
             'rtt.regex' => 'La clave es se compone de 2 letras seguido de 3 números',
-            'clave.unique' => 'La clave ya esta registrada',
             'nombre.required' => 'El nombre es obligatorio',
             'ap.required' => 'El Apellido Paterno es obligatorio',
             'am.required' => 'El Apellido Materno es obligatorio',
             'tel_personal.digits' => 'El teléfono debe componerse de 10 digitos',
             'tel_casa.digits' => 'El teléfono debe componerse de 7 digitos',
             'foto.image' => 'Este archivo no es una imagen',
-            'fotos.mimes' => 'Solo se aceptan archivos jpeg, jpg y png',
-            'deportes.required' => 'Este campo es obligatorio',
-            'fecha_ing.required' => 'Este campo es obligatorio',
-            'estado_civil.required' => 'Este campo es obligatorio',
-            'especialidad.required' => 'Este campo es obligatorio',
-            'cursos_m.required' => 'Este campo es obligatorio',
-            'estudios.required' => 'Este campo es obligatorio',
-            'puesto.required' => 'Este campo es obligatorio',
-            'tiempo.required' => 'Este campo es obligatorio',
-            'delegado.required' => 'Este campo es obligatorio',
-            'puestos_a.required' => 'Este campo es obligatorio'
+            'fotos.mimes' => 'Solo se aceptan archivos jpeg, jpg y png'
         ];
 
         $this->validate(request(),[
@@ -152,17 +119,7 @@ class TemporalesController extends Controller
             'fecha_nac' => 'nullable',
             'tel_personal' => 'digits:10',
             'tel_casa' => 'nullable|digits:7',
-            'foto' => 'nullable|image|mimes:jpeg,jpg,png',
-            'deportes' => 'required',
-            'fecha_ing' => 'required',
-            'estado_civil' => 'required',
-            'especialidad' => 'required',
-            'cursos_m' => 'required',
-            'estudios' => 'required',
-            'puesto' => 'required',
-            'tiempo' => 'required',
-            'delegado' => 'required',
-            'puestos_a' => 'required'
+            'foto' => 'nullable|image|mimes:jpeg,jpg,png'
         ],$messages);
 
         $temporales = Temporales::find($request->idtemp);
