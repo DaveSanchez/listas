@@ -23,9 +23,7 @@
                         <th class="text-center">RTT</th> 
                         <th class="text-center">Nombre completo</th> 
                         <th class="text-center">Entrada</th> 
-                        <th class="text-center">Hr Entrada</th> 
                         <th class="text-center">Salida</th> 
-                        <th class="text-center">Hr Salida</th> 
                         <th class="text-center">*</th> 
                     </tr> 
                 </thead> 
@@ -46,7 +44,6 @@
                                     <i class="text-danger fa fa-close" aria-hidden="true"></i>
                             @endif
                         </td> 
-                        <td>{{ $asistencia->hr_entrada }}</td> 
                         <td>
                                 @if ($asistencia->salida) 
                                 <i class="text-success fa fa-check" aria-hidden="true"></i>
@@ -54,7 +51,6 @@
                                     <i class="text-danger fa fa-close" aria-hidden="true"></i>
                             @endif    
                         </td> 
-                        <td>{{ $asistencia->hr_salida }}</td> 
                         <td>
                             @if ($asistencia->entrada)
                                 @else
