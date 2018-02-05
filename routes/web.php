@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/temporales','TemporalesController@index')->name('temporales');
 Route::post('/temporales/store','TemporalesController@store')->name('temporales.store');
 Route::get('/temporales/show/{id}','TemporalesController@show')->name('temporales.show');
+Route::get('/temporales/lists/{id}','TemporalesController@lists')->name('temporales.lists');
 Route::post('/temporales/update','TemporalesController@update')->name('temporales.update');
 Route::post('/temporales/disable','TemporalesController@disable')->name('temporales.disable');
 

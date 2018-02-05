@@ -39,7 +39,8 @@
                         <th class="text-center">Tiempo en puesto</th> 
                         <th class="text-center">Puestos Anteriores</th> 
                         <th class="text-center">Delegado</th> 
-                        <th>*</th>
+                        <th class="text-center">Listas</th> 
+                        <th>Actualizar</th>
                     </tr> 
                 </thead> 
                 <tbody> 
@@ -111,6 +112,12 @@
                         </td>
                         <td>
                             {{ $temporal->delegado }} 
+                        </td>
+                        
+                        <td>
+                            <a href="{!! route('temporales.lists',['id' => $temporal->id]) !!}">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>                                   
+                            </a>
                         </td>
                         <td>
                             <a href="{!! route('temporales.show',['id' => $temporal->id]) !!}">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Temporales;
+use App\Listas;
+use App\Asistencias;
 
 class TemporalesController extends Controller
 {
@@ -164,6 +166,17 @@ class TemporalesController extends Controller
         $success = $update ? $request->session()->flash('success', '¡Baja exitosa!') : $request->session()->flash('success', 'Ooops! Algo salio mal :(');
         
         return redirect()->route('temporales.show', [$request->idtemp]);
+
+    }
+
+    public function lists($id) {
+
+
+        $listas = Asistencias::join('listas', 'asistencias.lista_id', '=', 'listas.id')
+                                ->where('temporal_id',$id)->get();
+
+
+        return view('temporales.listas',compact('listas'));
 
     }
 
