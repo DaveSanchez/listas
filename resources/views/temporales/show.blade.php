@@ -17,6 +17,14 @@
                 <input type="hidden" name="idtemp" value="{{ $temporal['id'] }}">
                 <div class="container-fluid">
                     <div class="row-fluid">
+                        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                            <div class="center-block">
+                        <img src="{{ asset($temporal->foto)}}" class="img-responsive img-circle img-thumbnail" alt="Responsive image">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="form-group {{ $errors->has('rtt') ? ' has-error' : '' }}">
                                 <label class="control-label" for="rtt">RTT</label><span class="text-danger"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
@@ -269,13 +277,13 @@
                             <div class="row-fluid">
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                    <button class="btn btn-primary btn-block" type="submit">Actualizar</button>                            
+                                    <button class="btn btn-primary btn-block" type="submit" onclick="this.disabled=true;this.form.submit();">Actualizar</button>                            
                                         
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
-                                <button id="btn_baja_temp" class="btn btn-danger btn-block" type="button">Baja</button>
+                                <button id="btn_baja_temp" class="btn btn-danger btn-block" type="button" onclick="this.disabled=true;this.form.submit();">Baja</button>
                                 
                                 </div>
                                 </div>

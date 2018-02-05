@@ -57,16 +57,17 @@ class ListasController extends Controller
         
 
         //$asistencias = new Asistencias;
-        
+    
         //$asistencias = DB::table('asistencias')->join('temporales','asistencias.temporal_id','=','temporales.id')->where('id','=',$id)->get();
         $asistencias = DB::select('SELECT * FROM `asistencias` INNER JOIN `temporales` ON `asistencias`.`temporal_id` = `temporales`.`id` WHERE `lista_id` = ? ',[$id]);
 
-        
+        $lista = Listas::findOrFail($id);
+
         $temporales = new Temporales;
 
         $temporales = $temporales->notExistIn($id);
 
-        return view('listas.admin', compact('asistencias','temporales','id'));
+        return view('listas.admin', compact('asistencias','temporales','id','lista'));
 
     }
 

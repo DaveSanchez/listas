@@ -6,8 +6,12 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:20px 0px 20px 0px;">
             <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#nva_asist">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                Nuevo
+                Agregar temporal
             </button>
+            <a href="{{ route('listas') }}" class="btn btn-info">Todas las listas</a>
+            <h3>
+                Lista: {{ $lista->titulo }} - Fecha: {{ $lista->fecha }}
+            </h3>
         </div>
     </div>
 </div>

@@ -4,6 +4,15 @@
 
 <div class="container">
     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:20px 0px 0px 30px;">
+            <a href="{{ route('listas') }}" class="btn btn-info">Todas las listas</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:20px 0px 20px 0px;">
         <form method="POST" action="{{ route('listas.update') }}">
                         {{csrf_field()}}
