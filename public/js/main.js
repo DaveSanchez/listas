@@ -22,92 +22,9 @@ $(document).ready(function(){
     });
 
 
-    $("body").on("click",".btn-addtemp", function(e){
-        e.preventDefault();
-
-        var url = $("#storetemp").val();
-        var datatemp = $(this).closest('tr').attr('temp');
-
-        if(temp_exist(datatemp)){
-
-            alert('Este temporal ya existe');
-            
-
-        }else{
-        
-        /*$.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            url: url,
-            method: "POST",
-            data: { values: datatemp },
-        }).done(function(data){
-            console.log(data);
-            var json = $.parseJSON(data);
-            if(json.success){
-                alert('Se agrego temporal a la lista');
-            }else {
-                alert('algo salio mal');
-            }
-        });*/
-    }
-
-    });
-
-
-    function temp_exist(data){
-
-        var url = $("#check").val();
-        var datatemp = data;
-        var state = false;
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            url: url,
-            method: "POST",
-            data: { values: datatemp },
-            async: false,
-        }).done(function(data){
-            console.log(data);
-            var json = $.parseJSON(data);
-            
-            if(json.success){
-                alert('ya existe');
-                
-            }else {
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-        
-                $.ajax({
-                    url: $("#storetemp").val(),
-                    method: "POST",
-                    data: { values: datatemp },
-                }).done(function(data){
-                    console.log(data);
-                    var json = $.parseJSON(data);
-                    if(json.success){
-                        alert('Se agrego temporal a la lista');
-                        location.reload();
-                    }else {
-                        alert('algo salio mal');
-                    }
-                });
-            }
-        });
-
-    }
+$("body").on("click","#btn_add_temp",function(){
+    $(this).attr('disable');
+});
 
 
 

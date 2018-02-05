@@ -23,9 +23,8 @@ class AsistenciasController extends Controller
        
         $asistencias = new Asistencias;
 
-        $data = explode(':',$request->values);
-        $temporal_id = $data[0];
-        $lista_id = $data[1];
+        $temporal_id = $request->tid;
+        $lista_id = $request->lid;
 
  
         $asistencias->lista_id = $lista_id; 

@@ -58,7 +58,7 @@
                                     <form method="POST" action="{{ route('asistencias.in') }}">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="values" value="{{ $asistencia->temporal_id }}:{{ $asistencia->lista_id }}">
-                                        <button class="btn btn-success btn-xs">
+                                        <button class="btn btn-success btn-xs" onclick="this.disabled=true;this.form.submit();">
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                         </button>
                                     </form>
@@ -66,7 +66,7 @@
                                     <form method="POST" action="{{ route('asistencias.out') }}">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="values" value="{{ $asistencia->temporal_id }}:{{ $asistencia->lista_id }}">
-                                        <button class="btn btn-danger btn-xs">
+                                        <button class="btn btn-danger btn-xs" onclick="this.disabled=true;this.form.submit();">
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                         </button>
                                     </form>   
@@ -91,8 +91,7 @@
               <h4 class="modal-title" id="myModalLabel">Agregar Temporal</h4>
             </div>
             <div class="modal-body">
-                <input type="hidden" id="storetemp" value="{{ route('asistencias.store') }}">
-            <input type="hidden" id="check" value="{{ route('asistencias.check') }}">
+                
             
                     <table class="datatable table table-bordered table-striped table-condensed table-responsive"> 
                             <thead> 
@@ -108,9 +107,15 @@
                                     <td>{{ $temporal->rtt }}</td>
                                     <td>{{ $temporal->nombre_s }} {{ $temporal->apellido_paterno }} {{ $temporal->apellido_materno }}</td> 
                                     <td>
-                                        <a class="btn-addtemp btn btn-primary">
-                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                        </a>
+
+                                    <form method="POST" action="{{ route('asistencias.store') }}">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="tid" value="{{ $temporal->id }}">
+                                        <input type="hidden" name="lid" value="{{ $id }}">       
+                                        <button type="submit" class="btn btn-danger btn-xs" onclick="this.disabled=true;this.form.submit();">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
                                     </td>
                                 </tr> 
                                     @endforeach
@@ -119,7 +124,6 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" id="btn_save_list" class="btn btn-primary">Guardar</button>
             </div>
           </div>
         </div>
