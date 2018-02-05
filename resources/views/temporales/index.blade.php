@@ -25,6 +25,8 @@
                         <th class="text-center">Fecha de Nacimiento</th> 
                         <th class="text-center">Dirección</th> 
                         <th class="text-center">Telefono</th> 
+                        <th class="text-center">Asistencias</th> 
+                        <th class="text-center">Faltas</th> 
                         <th class="text-center">cijubila</th> 
                         <th class="text-center">25%</th> 
                         <th class="text-center">Con Hijos</th> 
@@ -59,7 +61,9 @@
                             {{ $temporal->tel_personal }}
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             {{ $temporal->tel_casa }}
-                        </td> 
+                        </td>
+                        <td>{{ $temporal->asistencias }}</td>
+                        <td>{{ $temporal->faltas }}</td> 
                         <td> 
                             @if ($temporal->cijubila)
                                 si

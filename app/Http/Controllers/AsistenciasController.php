@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Asistencias;
+use App\Temporales;
 
 class AsistenciasController extends Controller
 {
@@ -36,7 +37,19 @@ class AsistenciasController extends Controller
         
         $success = $asistencias->save() ? true: false;
 
-        return json_encode(['success' => $success]);
+        if($success){
+
+            $falta = Temporales::find($temporal_id);
+            $falta->increment('faltas',1,['id' => $temporal_id]);
+
+            $request->session()->flash('success', '¡Temporal agregado!');
+
+        }else {
+            $request->session()->flash('success', '¡Ooops algo salio mal!');
+        }
+        
+
+        return redirect()->route('listas.admin',[$lista_id]);
 
     }
 
@@ -50,7 +63,16 @@ class AsistenciasController extends Controller
         
         $success = $asistencias->entrada($temporal_id, $lista_id) ? true: false;
 
-        return json_encode(['success' => $success]);
+        if($success){
+
+            $request->session()->flash('success', '¡Ingreso registrado!');
+
+        }else {
+            $request->session()->flash('success', '¡Ooops algo salio mal!');
+        }
+
+        return redirect()->route('listas.admin',[$lista_id]);
+        
 
     }
 
@@ -63,7 +85,18 @@ class AsistenciasController extends Controller
         
         $success = $asistencias->salida($temporal_id, $lista_id) ? true: false;
 
-        return json_encode(['success' => $success]);
+        if($success){
+
+            $falta = Temporales::find($temporal_id);
+            $falta->increment('asistencias',1,['id' => $temporal_id]);
+            $falta->decrement('faltas',1,['id' => $temporal_id]);
+            $request->session()->flash('success', '¡Salida registrada!');            
+            
+        }else {
+            $request->session()->flash('success', '¡Ooops algo salio mal!');
+        }
+
+        return redirect()->route('listas.admin',[$lista_id]);
 
     }
 

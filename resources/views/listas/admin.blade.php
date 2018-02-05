@@ -52,17 +52,24 @@
                             @endif    
                         </td> 
                         <td>
-                            @if ($asistencia->entrada)
-                                @else
-                                <a href="#" temp="{{ $asistencia->temporal_id }}:{{ $asistencia->lista_id }}" class="text-success btn-entrada tooltiplink" data-toggle="tooltip" data-placement="top" title="Entrada">
-                                    <i class="fa fa-circle" aria-hidden="true"></i>
-                                </a>
-                            @endif
-                            @if ($asistencia->salida)
-                                @else
-                                <a href="#" temp="{{ $asistencia->temporal_id }}:{{ $asistencia->lista_id }}" class="text-danger btn-salida tooltiplink" data-toggle="tooltip" data-placement="top" title="Salida">
-                                    <i class="fa fa-circle" aria-hidden="true"></i>
-                                </a>
+                                                
+                            @if ($asistencia->entrada && $asistencia->salida)
+                                @elseif (!$asistencia->entrada && !$asistencia->salida)
+                                    <form method="POST" action="{{ route('asistencias.in') }}">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="values" value="{{ $asistencia->temporal_id }}:{{ $asistencia->lista_id }}">
+                                        <button class="btn btn-success btn-xs">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                @elseif ($asistencia->entrada && !$asistencia->salida) 
+                                    <form method="POST" action="{{ route('asistencias.out') }}">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="values" value="{{ $asistencia->temporal_id }}:{{ $asistencia->lista_id }}">
+                                        <button class="btn btn-danger btn-xs">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        </button>
+                                    </form>   
                             @endif
                         </td>
                     </tr> 
@@ -117,5 +124,18 @@
           </div>
         </div>
       </div>
+
+
+      @if (session('success'))
+            <script>
+            swal({
+                text: "{{ session('success') }}",
+                timer: 2000,
+                icon: "success",
+                button: false
+            });
+            
+        </script>
+    @endif
       
 @endsection
